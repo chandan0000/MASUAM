@@ -275,7 +275,7 @@ class _HomeState extends State<Home> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text("Made by OpenIndia"),
+                    Text("Made by Chandan"),
                     Text("Data Provided by OpenWheathermap.org"),
                   ],
                 ),
