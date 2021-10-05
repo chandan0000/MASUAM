@@ -11,7 +11,7 @@ class _LocationState extends State<Location> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text("Loaction"),
+      body: Text("Location"),
       
     );
   }
