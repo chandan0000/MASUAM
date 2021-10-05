@@ -1,11 +1,9 @@
 import 'dart:convert';
-//import 'dart:ffi';
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:new_gradient_app_bar/new_gradient_app_bar.dart';
-// import 'package:flutter_weather_icons/flutter_weather_icons.dart';
 import 'package:weather_icons/weather_icons.dart';
 
 class Home extends StatefulWidget {
@@ -25,24 +23,21 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     var city_name = [
-      "Mubbai",
+      "Mumbai",
       "Delhi",
       "Darbhanga",
-      "chandigrah",
+      "Chandigrah",
       "Indore",
       "Chennai",
-      "Lendon",
+      "London",
       "Sri Nagar",
     ];
     final _random = new Random();
     var city = city_name[_random.nextInt(city_name.length)];
-    //Map info = {};
-    //   info = ModalRoute.of(context)!.settings.arguments as Map
     Map<dynamic, dynamic>? info =
         ModalRoute.of(context)!.settings.arguments as Map;
     String? temp = ((info['temp_value']).toString()).substring(0, 4);
     String? icon = info['icon_value'];
-    //String? getCity = info['City_Value'];
     String? hum = info['hum_value'];
     String? air = ((info['air_speed_value']).toString()).substring(0, 4);
     String? dec = info['des_value'];
@@ -50,12 +45,6 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      // appBar: PreferredSize(
-      //   preferredSize: Size.fromHeight(0),
-      //   child: AppBar(
-      //     backgroundColor: Colors.yellow,
-      //   ),
-      // ),
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(0),
         child: NewGradientAppBar(
@@ -287,69 +276,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // Map info = {};
-    // info = ModalRoute.of(context)!.settings.arguments as Map;
-    //Map<dynamic,dynamic>? info= ModalRoute.of(context)!.settings.arguments;
-
-
-//  getData()  async {
-//   await Future.delayed(Duration(seconds: 1), () {
-//     username = "chandan";
-//   });
-
-//   //print("$username");
-// }
-
-// void showData() async {
-//  await getData();
-//   print("username: $username");
-// }
-
-//int counter = 1;
-  // void timer() {
-  //   Future.delayed(Duration(seconds: 2), () {
-  //     print("Alram is ringing");
-  //   });
-  //   print("you can do other staff");
-  // }
-
-
-
-
-
-
-
-
-
-
-
-
-  //async -functions start but return some delay
-  //future.delayed -Function start after some delayed time
-
-  // var url = Uri.https('mytimeapi.herokuapp.com', '/time/asia/kolkata');
-  // void getData() async {
-  //   //get data
-  //   // Response response = await get(Uri.parse('https://mytimeapi.herokuapp.com/time/asia/kolkata'));
-  //   // Map data = jsonDecode(response.body);
-  // }
-
-
-
-
-
-  
