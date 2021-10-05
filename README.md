@@ -1,6 +1,10 @@
-# mausam
+# Mausum
+
+![Flutter](https://img.shields.io/badge/Flutter-03589b?logo=flutter)  
 
 A new Flutter project.
+
+Shows the current weather.
 
 ## Getting Started
 
