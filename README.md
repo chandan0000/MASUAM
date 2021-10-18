@@ -1,10 +1,10 @@
-# Mausum
+<h1 align='center'>Mausum</h1>
 
 ![Flutter](https://img.shields.io/badge/Flutter-03589b?logo=flutter)  
 
-A new Flutter project.
+<h3 align='center'>A new Flutter project</h3>
 
-Shows the current weather.
+<h3 align='center'>Shows the current weather</h3>
 
 ## Getting Started
 
