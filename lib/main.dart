@@ -5,9 +5,8 @@ import 'package:mausam/Acitivity/location.dart';
 import 'Acitivity/home.dart';
 void main() {
   runApp(MaterialApp(
-  
+    title:"MASUAM",
     debugShowCheckedModeBanner: false,
-    
     routes: {
       "/":(context) => Loading(),
       "/home":(context)=>Home(),
