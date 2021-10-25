@@ -31,6 +31,9 @@ class _HomeState extends State<Home> {
       "Chennai",
       "London",
       "Sri Nagar",
+      "Pune",
+      "Kolkata",
+      "Ahemdabad",
     ];
     final _random = new Random();
     var city = city_name[_random.nextInt(city_name.length)];
@@ -51,7 +54,7 @@ class _HomeState extends State<Home> {
           gradient: LinearGradient(
             colors: [
               Colors.blue,
-              Colors.blue.shade200,
+              Colors.blue.shade300,
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -66,7 +69,7 @@ class _HomeState extends State<Home> {
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
               colors: [
-                Colors.blue.shade800,
+                Colors.blue.shade400,
                 Colors.blue.shade300,
               ],
             ),
