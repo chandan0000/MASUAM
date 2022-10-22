@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mausam/Worker/worker.dart';
@@ -62,6 +64,7 @@ class _LoadingState extends State<Loading> {
         ModalRoute.of(context)!.settings.arguments as Map;
 
     if (search?.isNotEmpty ?? false) {
+      log("search is not empty");
       city = search["searchText"];
     }
     startApp(city);
