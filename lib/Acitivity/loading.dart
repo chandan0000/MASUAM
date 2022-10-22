@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mausam/Worker/worker.dart';
@@ -20,27 +22,34 @@ class _LoadingState extends State<Loading> {
   String? icon;
 
   void startApp(String? city) async {
-    worker instance = worker(location: city);
-    await instance.getData();
-    temp = instance.temp;
-    hum = instance.humidity;
-    air_speed = instance.air_speed;
-    des = instance.description;
-    main = instance.main;
+    try {
+      worker instance = worker(location: city);
+      await instance.getData();
+      temp = instance.temp;
+      hum = instance.humidity;
+      air_speed = instance.air_speed;
+      des = instance.description;
+      main = instance.main;
 
-    icon = instance.icon;
+      icon = instance.icon;
 
-    Future.delayed(Duration(seconds: 1), () {
-      Navigator.pushReplacementNamed(context, "/home", arguments: {
-        "temp_value": temp,
-        "hum_value": hum,
-        "air_speed_value": air_speed,
-        "des_value": des,
-        "main_value": main,
-        "icon_value": icon,
-        "city_value": city,
+      Future.delayed(Duration(seconds: 1), () {
+        Navigator.pushReplacementNamed(context, "/home", arguments: {
+          "temp_value": temp,
+          "hum_value": hum,
+          "air_speed_value": air_speed,
+          "des_value": des,
+          "main_value": main,
+          "icon_value": icon,
+          "city_value": city,
+        });
       });
-    });
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text("City Not Found ${e}"),
+        duration: Duration(seconds: 2),
+      ));
+    }
   }
 
   @override
@@ -53,9 +62,9 @@ class _LoadingState extends State<Loading> {
   Widget build(BuildContext context) {
     Map<dynamic, dynamic>? search =
         ModalRoute.of(context)!.settings.arguments as Map;
-    city = search["searchText"];
 
-    if (search.isNotEmpty == false) {
+    if (search?.isNotEmpty ?? false) {
+      log("search is not empty");
       city = search["searchText"];
     }
     startApp(city);
