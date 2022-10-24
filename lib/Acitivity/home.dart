@@ -53,7 +53,7 @@ class _HomeState extends State<Home> {
         child: NewGradientAppBar(
           gradient: LinearGradient(
             colors: [
-              Colors.blue,
+              Colors.purple,
               Colors.blue.shade300,
             ],
             begin: Alignment.topRight,
