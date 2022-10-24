@@ -39,6 +39,7 @@ dependencies:
   new_gradient_app_bar: ^0.2.0
   flutter_weather_icons: ^1.0.2
   weather_icons: ^3.0.0
+  flutter_riverpod: ^2.0.2
   # gradient_app_bar:
   
 
